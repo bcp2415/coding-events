@@ -14,17 +14,11 @@
     <thead>
         <tr>
             <th>Name</th>
-            <th>Description</th>
         </tr>
     </thead>
-    <th:block>
     <tr th:each = "event : ${events}">
         <td th:text = "${event.name}"></td>
-        <td th:text = "${event.description}"></td>
-        <th:block th:replace = "fragments :: hub"></th:block>
-        <td><a th:href = "@{/static/images/${event.href}}"/>Picture here?</a></td>
     </tr>
-    </th:block>
 
 </table>
 
