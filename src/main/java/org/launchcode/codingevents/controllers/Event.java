@@ -3,6 +3,7 @@ package org.launchcode.codingevents.controllers;
 public class Event {
     String name;
     String description;
+    String href;
 
     public String getName() {
         return name;
@@ -18,5 +19,13 @@ public class Event {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getHref() {
+        return href;
+    }
+
+    public void setHref(String href) {
+        this.href = href;
     }
 }

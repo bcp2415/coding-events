@@ -12,21 +12,24 @@ import java.util.ArrayList;
 @Controller
 @RequestMapping("events")
 public class EventController {
-    private Event event = new Event();
 
-    private static ArrayList<Event> events = new ArrayList<Event>();
+
 
     @GetMapping
     public String displayAllEvents(Model model) {
+        ArrayList<Event> events = new ArrayList<Event>();
         Event apple = new Event();
-        apple.setName("Baked Appel");
+        apple.setName("Baked Apples");
         apple.setDescription("Come hear how Apple renders its devices useless at a date they determine.");
+        apple.setHref("coffee");
         Event meta = new Event();
         meta.setName("Meta Meta");
         meta.setDescription("Pre Meta Epi Anti In En Ana...How many prepositions strung together can you make sense of?");
+        meta.setHref("monastery");
         Event loop = new Event();
         loop.setName("Loops in the Loop");
         loop.setDescription("Have we lost control of control structures?");
+        loop.setHref("horse");
         events.add(apple);
         events.add(meta);
         events.add(loop);
