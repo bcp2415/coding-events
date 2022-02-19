@@ -1,8 +1,6 @@
 package org.launchcode.codingevents.models;
 
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+import jakarta.validation.constraints.*;
 
 import java.util.Objects;
 
@@ -21,6 +19,19 @@ public class Event {
     @NotBlank(message = "Email is required.")
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
+
+    @NotBlank(message = "A location is required.")
+    @Size(max = 100, message = "Enter the location in 100 characters or fewer.")
+    private String location;
+
+    private boolean needToRegister;
+
+    @Min(value = 0)
+    private int numberAttending;
+
+    @NotNull
+    @Min(value = 0, message = "Enter 0 if there is no registration fee, or a positive number if there is a fee.")
+    private double registrationFee;
 
     public Event(String name, String description, String contactEmail) {
         this();
@@ -60,6 +71,38 @@ public class Event {
 
     public void setContactEmail(String contactEmail) {
         this.contactEmail = contactEmail;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public boolean isNeedToRegister() {
+        return needToRegister;
+    }
+
+    public void setNeedToRegister(boolean needToRegister) {
+        this.needToRegister = needToRegister;
+    }
+
+    public int getNumberAttending() {
+        return numberAttending;
+    }
+
+    public void setNumberAttending(int numberAttending) {
+        this.numberAttending = numberAttending;
+    }
+
+    public double getRegistrationFee() {
+        return registrationFee;
+    }
+
+    public void setRegistrationFee(double registrationFee) {
+        this.registrationFee = registrationFee;
     }
 
     @Override
