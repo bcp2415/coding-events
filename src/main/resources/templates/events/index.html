@@ -19,6 +19,7 @@
             <th>Is Registration Required?</th>
             <th>Number of People Attending</th>
             <th>Registration Fee</th>
+            <th>Type</th>
         </tr>
     </thead>
     <tr th:each = "event : ${events}">
@@ -30,6 +31,7 @@
         <td th:text = "${event.needToRegister}"></td>
         <td th:text = "${event.numberAttending}"></td>
         <td th:text = "${event.registrationFee}"></td>
+        <td th:text = "${event.type.displayName}"></td>
     </tr>
 
 </table>

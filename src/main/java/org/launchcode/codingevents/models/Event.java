@@ -20,6 +20,8 @@ public class Event {
     @Email(message = "Invalid email. Try again.")
     private String contactEmail;
 
+    private EventType type;
+
     @NotBlank(message = "A location is required.")
     @Size(max = 100, message = "Enter the location in 100 characters or fewer.")
     private String location;
@@ -33,7 +35,7 @@ public class Event {
     @Min(value = 0, message = "Enter 0 if there is no registration fee, or a positive number if there is a fee.")
     private double registrationFee;
 
-    public Event(String name, String description, String contactEmail) {
+    public Event(String name, String description, String contactEmail, EventType type) {
         this();
         this.name = name;
         this.description = description;
@@ -103,6 +105,14 @@ public class Event {
 
     public void setRegistrationFee(double registrationFee) {
         this.registrationFee = registrationFee;
+    }
+
+    public EventType getType() {
+        return type;
+    }
+
+    public void setType(EventType type) {
+        this.type = type;
     }
 
     @Override
